@@ -1,0 +1,26 @@
+$accent-base: #5d30ff;
+$accent-100: $accent-base;
+$accent-80: rgba($accent-base, 0.8);
+$accent-20: rgba($accent-base, 0.2);
+
+$basic-100: #ffffff;
+$basic-200: #f2f6ff;
+$basic-300: #dcdde6;
+$basic-400: #c8c8d0;
+$basic-500: #bcbbc2;
+$basic-600: #7a7a80;
+$basic-700: #4a4a4d;
+$basic-800: #2e2e30;
+$basic-900: #1e1e20;
+
+$light-box-shadow:
+  20px 20px 40px rgba(80, 60, 120, 0.2),
+  -20px -20px 40px rgba(255, 255, 255, 1),
+  inset 4px 4px 8px rgba(80, 60, 120, 0.1),
+  inset -4px -4px 8px rgba(255, 255, 255, 0.5);
+
+$dark-box-shadow:
+  10px 10px 20px rgba(0, 0, 0, 0.6),
+  -10px -10px 20px rgba(255, 255, 255, 0.02),
+  inset 3px 3px 6px rgba(0, 0, 0, 0.4),
+  inset -3px -3px 6px rgba(255, 255, 255, 0.05);

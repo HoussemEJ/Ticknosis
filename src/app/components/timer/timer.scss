@@ -1,0 +1,72 @@
+@use '../../../styles/palette' as palette;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.session {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  color: palette.$accent-100;
+
+  h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    white-space: nowrap;
+
+    &.active {
+      font-weight: 700;
+    }
+  }
+}
+
+.timer-display {
+  font-family: 'Lekton';
+  font-size: 2rem;
+  font-weight: 500;
+  margin-top: 1rem;
+  text-align: center;
+  color: palette.$accent-100;
+  margin: 0;
+}
+
+.control {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    height: 70px;
+    width: 70px;
+    color: var(--background-01);
+    background-color: palette.$accent-100;
+    border-radius: 50%;
+    transition: 0.2s ease-in;
+    box-shadow:
+      0px 10px 20px rgba(0, 0, 0, 0.1),
+      0px 4px 6px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+
+    &.small {
+      transform: scale(0.75);
+      color: var(--background-01);
+      background-color: var(--background-03);
+    }
+  }
+}

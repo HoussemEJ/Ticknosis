@@ -1,0 +1,122 @@
+@use '../../../styles/palette' as palette;
+
+:host {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  margin-top: 1rem;
+  border: 5px solid var(--background-01);
+  border-radius: 50%;
+  box-shadow: var(--box-shadow);
+  transition: all 0.2s ease-in-out;
+}
+
+.analog-clock {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  .counter {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 0;
+    height: 28px;
+    width: 28px;
+    font-size: 1rem;
+    color: var(--background-01);
+    background-color: palette.$accent-100;
+    border-radius: 50%;
+    box-shadow:
+      4px 0px 20px rgba(0, 0, 0, 0.1),
+      0px 4px 6px rgba(0, 0, 0, 0.05);
+
+    h3 {
+      margin: 0;
+      padding: 0;
+      font-weight: 400;
+      white-space: nowrap;
+    }
+  }
+
+  .numbers {
+    position: absolute;
+    right: 50%;
+    bottom: 50%;
+    transform: translate(50%, 50%);
+    z-index: 99;
+
+    .number {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      right: 50%;
+      bottom: 50%;
+      width: 32px;
+      height: 32px;
+      font-size: 1.2rem;
+    }
+
+    .fa-circle {
+      font-size: 0.25rem;
+    }
+  }
+
+  .center {
+    position: absolute;
+    right: 50%;
+    bottom: 50%;
+    transform: translate(50%, 50%);
+    width: 10px;
+    height: 10px;
+    background-color: palette.$accent-100;
+    border-radius: 50%;
+    z-index: 100;
+  }
+
+  .dial {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform-origin: bottom center;
+    background: var(--text-color);
+    z-index: 99;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: 20px;
+      background: inherit;
+      border-radius: inherit;
+    }
+
+    &.hour {
+      width: 4px;
+      height: 70px;
+      border-radius: 4px;
+
+      &::before {
+        bottom: -15px;
+      }
+    }
+
+    &.minute {
+      width: 3px;
+      height: 125px;
+      border-radius: 3px;
+    }
+
+    &.second {
+      width: 2px;
+      height: 140px;
+      border-radius: 2px;
+      background: palette.$accent-100;
+    }
+  }
+}

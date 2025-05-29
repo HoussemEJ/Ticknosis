@@ -1,0 +1,51 @@
+@if (running()) {
+  <app-slice></app-slice>
+}
+<div class="analog-clock">
+  <div class="counter">
+    <p>{{ completedPomodoros() }}</p>
+  </div>
+  <div class="numbers">
+    @for (n of numbers; track n) {
+      <div
+        class="number"
+        [style.transform]="
+          'translate(50%, 50%) rotate(' +
+          n * 30 +
+          'deg) translateY(-108px) rotate(' +
+          -n * 30 +
+          'deg)'
+        "
+      >
+        @if (n === 0) {
+          12
+        } @else if (n % 3 === 0) {
+          {{ n }}
+        } @else {
+          <i class="fa-solid fa-circle"></i>
+        }
+      </div>
+    }
+  </div>
+
+  <div class="center"></div>
+
+  <div
+    class="dial hour"
+    [style.transform]="'translateX(-50%) rotate(' + this.hourDegrees() + 'deg)'"
+  ></div>
+
+  <div
+    class="dial minute"
+    [style.transform]="
+      'translateX(-50%) rotate(' + this.minuteDegrees() + 'deg)'
+    "
+  ></div>
+
+  <div
+    class="dial second"
+    [style.transform]="
+      'translateX(-50%) rotate(' + this.secondDegrees() + 'deg)'
+    "
+  ></div>
+</div>

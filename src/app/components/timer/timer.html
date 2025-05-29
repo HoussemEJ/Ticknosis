@@ -1,0 +1,27 @@
+<div class="session">
+  @for (session of sessions; track $index) {
+  <h3 [class.active]="session === currentSession()">{{ session }}</h3>
+  }
+</div>
+
+<app-clock></app-clock>
+
+<div class="display">
+  <div class="timer-display">{{ countdown() }}</div>
+</div>
+
+<div class="control">
+  <div class="btn small" (click)="reset()">
+    <i class="fa-solid fa-rotate-left"></i>
+  </div>
+  <div class="btn" (click)="togglePlayPause()">
+    <i
+      class="fa-solid fa-fw"
+      [class.fa-play]="!running()"
+      [class.fa-pause]="running()"
+    ></i>
+  </div>
+  <div class="btn small" (click)="jump()">
+    <i class="fa-solid fa-forward-step"></i>
+  </div>
+</div>

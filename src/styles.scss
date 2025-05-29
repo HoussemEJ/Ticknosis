@@ -1,1 +1,51 @@
-/* You can add global styles to this file, and also import other style files */
+@use './styles/palette' as palette;
+
+:root {
+  --background-01: #{palette.$basic-200};
+  --background-02: #{palette.$basic-300};
+  --background-03: #{palette.$basic-500};
+  --text-color: #{palette.$basic-900};
+  --box-shadow: #{palette.$light-box-shadow};
+}
+
+body[data-theme='light'] {
+  --background-01: #{palette.$basic-200};
+  --background-02: #{palette.$basic-300};
+  --background-03: #{palette.$basic-500};
+  --text-color: #{palette.$basic-900};
+  --box-shadow: #{palette.$light-box-shadow};
+}
+
+body[data-theme='dark'] {
+  --background-01: #{palette.$basic-900};
+  --background-02: #{palette.$basic-700};
+  --background-03: #{palette.$basic-700};
+  --text-color: #{palette.$basic-200};
+  --box-shadow: #{palette.$dark-box-shadow};
+}
+
+@media (prefers-color-scheme: dark) {
+  body:not([data-theme]) {
+    --background-01: #{palette.$basic-900};
+    --background-02: #{palette.$basic-700};
+    --background-03: #{palette.$basic-700};
+    --text-color: #{palette.$basic-200};
+    --box-shadow: #{palette.$dark-box-shadow};
+  }
+}
+
+html,
+body {
+  height: 100vh;
+  text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--background-01);
+  color: var(--text-color);
+  transition: 0.2s ease-in-out;
+}
